@@ -8,6 +8,7 @@ let counter = 0;
 let lastLoading = [];
 let lastCityImage = [];
 let tekshir = false;
+let counterImg = 0;
 button.addEventListener("click", function () { result(); });
 function fnLoading() {
     for (let i = 0; i < firstLoading.length; i++) {
@@ -81,19 +82,10 @@ function result() {
     console.log(boxAll);
 }
 function randomImg() {
-    let img = [
-        "https://images.pexels.com/photos/3573382/pexels-photo-3573382.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "https://images.pexels.com/photos/3849167/pexels-photo-3849167.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "https://images.pexels.com/photos/3859774/pexels-photo-3859774.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "https://images.pexels.com/photos/1121782/pexels-photo-1121782.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "https://images.pexels.com/photos/1402790/pexels-photo-1402790.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "https://images.pexels.com/photos/951539/pexels-photo-951539.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=600"
-    ];
-    let random = Math.ceil(Math.random() * 7);
-    console.log(random);
-    return img[random];
+    if (counterImg >= 10) {
+        return `https://picsum.photos/3000/30${counterImg++}`;
+    }
+    return `https://picsum.photos/3000/300${counterImg++}`;
 }
 function loadingRandom() {
     let random = Math.ceil(Math.random() * 2 + 2);
